@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="js/jquery.min.js"></script>
+    <title>详情页</title>
+
+</head>
+<body>
+    <div class="banner">
+        <img src="img/banner.png" alt="">
+    </div>
+    <div class="div1">
+        <img src="img/img2.png" alt="">
+    </div>
+    <div class="div2">
+        <h2>邀请好友一起使用蝶变，一起领取<i>会员大礼包</i></h2>
+        <img src="img/img1.png" class="img1" alt="">
+    </div>
+    <div class="div1">
+        <img src="img/img3.png" alt="">
+    </div>
+    <div class="div2">
+        <div id="text_1">
+            <h2>我正在参加蝶变志愿“<i>踏春出游季 邀请好友领大礼</i>”活动，所有高中生家长都可以参与，快来帮我赢会员！</h2>
+            <p>1. 活动时间：2023年4月10日至4月23日</p>
+            <p>2. 优惠券有效期截止到4月25日</p>
+            <p>3. 邀请5人，赠送5折会员优惠券</p>
+            <p>4. 邀请10人，赠送3折会员优惠券</p>
+            <p>5. 邀请15人，免费赠送蝶变志愿年会员</p>
+            <p>6. 所有参加活动的用户可选择直接点击分享，或选择点击保存图片/屏幕截图等进行图片保存，后复制文案，再进行分享。</p>
+            <p>7. 本活动会员用户与非会员用户均可参加</p>
+            <p>①非会员用户，活动期间邀请一定人数好友注册蝶变后，联系在线客服，提供注册用户手机号，客服核实后，进行优惠券/会员发放。</p>
+            <p>②会员用户，活动期间邀请一定人数好友注册蝶变后，联系在线客服，提供注册用户手机号，客服核实后，可将优惠券/会员赠送指定用户（只有一次机会，不可更改）</p>
+            <p>8. 活动中，如有不理解可联系在线客服</p>
+            <p>9. 本活动最终解释权归蝶变志愿所有</p>
+        </div>
+        <h3>我也要<i>领会员</i>/我要<i>助力</i><br>识别二维码参加蝶变志愿活动</h3>
+        <img src="img/img_app_download.png" class="img2" alt="">
+        <span>扫码下载APP</span>
+    </div>
+    <div class="div4">
+        <div class="div4_1">
+            <img src="img/img4.png" class="img4"  onclick="tapCopy('text_1')" alt="">
+        </div>
+        <div class="div4_2">
+            <img src="img/img5.png" class="img5" alt="">
+            <img src="img/img6.png" class="img6" alt="">
+        </div>
+    </div>
+    <b class="b_box">已复制文案</b>
+    <script>
+        function tapCopy($id) {
+            selectText($id);
+            document.execCommand('copy');
+            $('.b_box').css('display','block')
+            var timer=null
+            timer=setTimeout(function(){
+                $('.b_box').css('display','none')
+            },3000)
+        //     setTimeout(function(){
+        //     clearInterval(timer); //5秒后清除定时器
+        // },5000);
+        }
+        function selectText(element) {
+            var text = document.getElementById(element);
+            if (document.body.createTextRange) { 
+                var range = document.body.createTextRange(); 
+                range.moveToElementText(text); 
+                range.select(); 
+            } else if (window.getSelection) {
+                var selection = window.getSelection(); 
+                var range = document.createRange(); 
+                range.selectNodeContents(text);  
+                selection.removeAllRanges(); 
+                selection.addRange(range); 
+            } else {
+                alert("复制失败");
+            }
+        }
+    </script>
+</body>
+</html>
